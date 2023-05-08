@@ -2,6 +2,7 @@
 
     require_once __DIR__ . '/Models/Prodotti.php';
     require_once __DIR__ . '/Database/db.php';
+    require_once __DIR__ . '/Traits/Weightable.php';
 
 ?>
 
@@ -50,7 +51,7 @@
                                 <div class="col-md-8">
                                     <div class="card-body">
                                         <h3 class="card-title"> <?php echo $prodotto->nome?> </h3>
-                                        <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->prezzo ?></small></p>
+                                        <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->prezzo ?> €</small></p>
                                         <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->getClassName() ?> per <?php echo $prodotto->categoria->nome ?> </small></p>
                                         <?php
                                             if($prodotto->getClassName() == 'Gioco') { 
@@ -60,13 +61,13 @@
                                         <?php
                                             } else if($prodotto->getClassName() == 'Cibo') {
                                         ?>
-                                            <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->taglia ?></small></p>
-                                            <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->peso ?></small></p>
+                                            <p class="card-text"><small class="text-body-secondary">Taglia: <?php echo $prodotto->taglia ?></small></p>
+                                            <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->getWeight() ?></small></p>
                                         <?php
                                             } else if ($prodotto->getClassName() == 'Accessorio') {
                                         ?>
-                                            <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->materiale ?></small></p>
-                                            <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->dimensioni ?></small></p>
+                                            <p class="card-text"><small class="text-body-secondary">Materiale: <?php echo $prodotto->materiale ?></small></p>
+                                            <p class="card-text"><small class="text-body-secondary">Dimensioni: <?php echo $prodotto->dimensioni ?></small></p>
                                         <?php
                                             }
                                         ?>

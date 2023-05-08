@@ -13,7 +13,7 @@
         public $categoria;
         
 
-        public function __construct(String $_immagine, String $_nome, String $_prezzo, Categorie $_categoria ) {
+        public function __construct(String $_immagine, String $_nome, float $_prezzo, Categorie $_categoria ) {
             $this->immagine = $_immagine;
             $this->nome = $_nome;
             $this->prezzo = $_prezzo;
