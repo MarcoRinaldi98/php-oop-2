@@ -51,19 +51,19 @@
                                     <div class="card-body">
                                         <h3 class="card-title"> <?php echo $prodotto->nome?> </h3>
                                         <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->prezzo ?></small></p>
-                                        <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->type ?> per <?php echo $prodotto->categoria->nome ?> </small></p>
+                                        <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->getClassName() ?> per <?php echo $prodotto->categoria->nome ?> </small></p>
                                         <?php
-                                            if($prodotto->type == 'Gioco') { 
+                                            if($prodotto->getClassName() == 'Gioco') { 
                                         ?>
                                             <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->descrizione ?></small></p>
                                             <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->dimensioni ?></small></p>
                                         <?php
-                                            } else if($prodotto->type == 'Cibo') {
+                                            } else if($prodotto->getClassName() == 'Cibo') {
                                         ?>
                                             <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->taglia ?></small></p>
                                             <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->peso ?></small></p>
                                         <?php
-                                            } else if ($prodotto->type == 'Accessorio') {
+                                            } else if ($prodotto->getClassName() == 'Accessorio') {
                                         ?>
                                             <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->materiale ?></small></p>
                                             <p class="card-text"><small class="text-body-secondary"><?php echo $prodotto->dimensioni ?></small></p>
